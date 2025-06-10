@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/loading.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl space-y-6">
+    <div class="text-center">
+      <h1 class="text-3xl font-extrabold text-gray-800 mb-2">Welcome to the Dashboard</h1>
+      <p class="text-gray-500">Control your camera and manage your session</p>
+    </div>
+
+    <!-- Live Location and Time -->
+    <div id="infoSection" class="text-center space-y-1">
+      <p id="location" class="text-gray-700 text-sm">Fetching location...</p>
+      <p id="time" class="text-gray-700 text-sm">Fetching time...</p>
+    </div>
+
+    <!-- Camera Section -->
+    <div>
+      <h2 class="text-xl font-semibold text-gray-700 mb-2 mt-4">Camera Preview</h2>
+      <video id="video" autoplay playsinline class="rounded-xl shadow-md w-full aspect-video bg-black mb-4"></video>
+
+      <div class="flex justify-center gap-4">
+        <button 
+          onclick="startCamera()" 
+          class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition"
+        >
+          Start Camera
+        </button>
+        <button 
+          onclick="stopCamera()" 
+          class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition"
+        >
+          Stop Camera
+        </button>
+      </div>
+    </div>
+
+    <!-- Logout -->
+    <div class="text-center">
+      <button 
+        onclick="logout()" 
+        class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full shadow-lg transition"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <script src="Script/dashboard.js"></script>
+</body>
+</html>
